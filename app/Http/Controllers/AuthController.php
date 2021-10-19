@@ -47,10 +47,6 @@ class AuthController extends Controller
         $client = new Client();
 
         try {
-            // $oauth_clients = DB::table('oauth_clients')->where('name', env('APP_NAME') . ' Password Grant Client')->where('password_client', 1)->first();
-            // $client_id = $oauth_clients->id;
-            // $client_secret = $oauth_clients->secret;
-
             return $client->post(config('service.passport.login_endpoint'), [
                 "form_params" => [
                     "client_id" => config('passport.personal_access_client.id'),
